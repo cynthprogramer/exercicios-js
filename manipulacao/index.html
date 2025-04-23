@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 23/04</title>
+<body>
+
+<input id="linhas"><br></br>
+<input id="colunas"><br></br>
+<button onclick="criar()">Criar</button>
+<button onclick="limpar()">Limpar</button>
+
+<div id="tabela"></div>
+
+<script>
+function criar() {
+  let l = document.getElementById("linhas").value;
+  let c = document.getElementById("colunas").value;
+  let div = document.getElementById("tabela");
+  limpar();
+  let tabela = document.createElement("table");
+  for (let i = 0; i < l; i++) {
+    let tr = document.createElement("tr");
+    for (let j = 0; j < c; j++) {
+      let td = document.createElement("td");
+      td.innerText = "X";
+      tr.appendChild(td);
+    }
+    let btn = document.createElement("button");
+    btn.innerText = "Remover";
+    btn.onclick = () => tr.remove();
+    let tdBtn = document.createElement("td");
+    tdBtn.appendChild(btn);
+    tr.appendChild(tdBtn);
+    tabela.appendChild(tr);
+  }
+  div.appendChild(tabela);
+}
+
+function limpar() {
+  document.getElementById("tabela").innerHTML = "";
+}
+</script>
+
+</body>
+</html>
