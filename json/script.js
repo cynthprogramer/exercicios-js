@@ -4,10 +4,11 @@ $(document).ready(function() {
         var cidade = $('#fcidade').val();  // Pega o nome da cidade do input
         if(cidade) {
             // Faz a requisição para a API WTTR.IN
-            $.getJSON('https://wttr.in/'+{cidade}+'?format=j1', function(data) {
+            $.getJSON('https://wttr.in/' + cidade + '?format=j1', function(data) {
                 // Exibe os dados na página
-                var tempAtual = data.current_condition[0].temp_C; 
+                var tempAtual = data.current_condition[0].temp_C; // Temperatura atual em °C
                 var sensacao = data.current_condition[0].FeelsLikeC;
+
 
                 // Cria e insere os elementos na página
                 $('#resultado').remove(); // Remove o resultado anterior, se houver
