@@ -15,8 +15,8 @@ $(document).ready(function() {
                 $('body').append(`
                     <div id="resultado">
                         <h2>A cidade de ${cidade}</h2>
-                        <p>Está como temperatura de ${tempAtual} °C</p>
-                        <p>Com sensação termica de ${sensacao}°C</p>
+                        <p>Está como temperatura de: ${tempAtual} °C</p>
+                        <p>Com sensação termica de: ${sensacao}°C</p>
                         
                     </div>
                 `);
